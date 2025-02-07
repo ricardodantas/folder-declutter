@@ -83,7 +83,7 @@ jobs:
           tag_name: v${{ steps.get_version.outputs.current }}
           name: "Release v${{ steps.get_version.outputs.current }}"
           files: |
-            artifact-linux/folder-declutter
-            artifact-macos/folder-declutter
+            artifact-linux/folder-declutter-macos-latest-${{ steps.get_version.outputs.current }}
+            artifact-macos/folder-declutter-linux-latest-${{ steps.get_version.outputs.current }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
