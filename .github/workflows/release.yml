@@ -91,10 +91,15 @@ jobs:
         with:
           tag_name: v${{ steps.get_version.outputs.current }}
           name: "Release v${{ steps.get_version.outputs.current }}"
+          generate_release_notes: true
           draft: false
           prerelease: false
+          make_latest: true
           files: |
             artifact-linux/folder-declutter-linux-${{ steps.get_version.outputs.current }}
             artifact-macos/folder-declutter-macos-${{ steps.get_version.outputs.current }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish:
+    needs: [release]
+    uses: ./.github/workflows/publish.yml

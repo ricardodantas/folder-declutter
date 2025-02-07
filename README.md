@@ -16,7 +16,17 @@ Folder Declutter is a command-line utility written in Rust that helps you free u
 
 ### Download and Installation
 
-1. Download the latest version for your operating system from our [releases page](https://github.com/ricardodantas/folder-declutter/releases).
+#### Option 1 (Manual)
+
+Download the latest version for your operating system from our [releases page](https://github.com/ricardodantas/folder-declutter/releases) and move the binary to `/usr/local/bin`.
+
+#### Option 2 (via cargo)
+
+Execute the command below:
+
+```bash
+cargo install folder-declutter
+```
 
 ### Scheduling with Cron
 
