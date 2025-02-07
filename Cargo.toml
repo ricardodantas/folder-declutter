@@ -1,7 +1,18 @@
 [package]
 name = "folder-declutter"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
+authors = ["Ricardo Dantas <ricardodantas@gmail.com>"]
+description = "Folder Declutter is a command-line utility written in Rust that helps you free up disk space by automatically deleting files that haven't been modified in a specified number of days."
+readme = "README.md"
+homepage = "https://github.com/ricardodantas/folder-declutter"
+repository = "https://github.com/ricardodantas/folder-declutter"
+documentation = "https://docs.rs/folder-declutter"
+license = "Apache-2.0"
+# Optionally, include a license file if available
+license-file = "LICENSE"
+keywords = ["cli", "tool", "folder", "declutter"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 clap = { version = "4.5.28", features = ["derive"] }
