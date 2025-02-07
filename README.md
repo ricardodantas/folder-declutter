@@ -1,5 +1,7 @@
 # Folder Declutter
 
+[![Build and Release](https://github.com/ricardodantas/folder-declutter/actions/workflows/release.yml/badge.svg)](https://github.com/ricardodantas/folder-declutter/actions/workflows/release.yml)
+
 Folder Declutter is a command-line utility written in Rust that helps you free up disk space by automatically deleting files that haven't been modified in a specified number of days.
 
 > **Supported Operating Systems:**
