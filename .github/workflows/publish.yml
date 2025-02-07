@@ -1,8 +1,9 @@
 name: Publish Crate
 
 on:
+  workflow_dispatch:
   release:
-    types: [published]
+    types: [released]
 
 jobs:
   publish:
