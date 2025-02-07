@@ -42,6 +42,7 @@ This cron setup will run Folder Declutter daily, removing files in the specified
 
 - **Service Mode:** Run the tool as a background service, eliminating the need for manual cron configuration.
 - **GUI Enhancements:** Add support for a system tray/menu bar interface for an improved user experience.
+- **Windows** support.
 
 ## License
 
