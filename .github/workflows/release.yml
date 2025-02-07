@@ -91,6 +91,8 @@ jobs:
         with:
           tag_name: v${{ steps.get_version.outputs.current }}
           name: "Release v${{ steps.get_version.outputs.current }}"
+          draft: false
+          prerelease: false
           files: |
             artifact-linux/folder-declutter-linux-${{ steps.get_version.outputs.current }}
             artifact-macos/folder-declutter-macos-${{ steps.get_version.outputs.current }}
