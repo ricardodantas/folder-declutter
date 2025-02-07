@@ -46,15 +46,12 @@ jobs:
           toolchain: stable
       - name: Build project
         run: cargo build --release
-      - name: Rename built binary with OS and version
-        run: |
-          mv target/release/folder-declutter target/release/folder-declutter-${{ matrix.os }}-${{ needs.check-version.outputs.current_version }}
       - name: Upload build artifact
         id: upload_artifact
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.os }}
-          path: target/release/folder-declutter-${{ matrix.os }}-${{ needs.check-version.outputs.current_version }}
+          path: target/release/folder-declutter  # adjust binary name if needed
 
   release:
     runs-on: ubuntu-latest
@@ -76,6 +73,12 @@ jobs:
         with:
           name: build-macos-latest
           path: artifact-macos
+
+      - name: Rename binaries
+        run: |
+          mv artifact-linux/folder-declutter artifact-linux/folder-declutter-linux-${{ steps.get_version.outputs.current }}
+          mv artifact-macos/folder-declutter artifact-macos/folder-declutter-macos-${{ steps.get_version.outputs.current }}
+
       - name: Create Release and attach artifacts
         id: create_release
         uses: softprops/action-gh-release@v2
@@ -83,7 +86,7 @@ jobs:
           tag_name: v${{ steps.get_version.outputs.current }}
           name: "Release v${{ steps.get_version.outputs.current }}"
           files: |
-            artifact-linux/folder-declutter-macos-latest-${{ steps.get_version.outputs.current }}
-            artifact-macos/folder-declutter-linux-latest-${{ steps.get_version.outputs.current }}
+            artifact-linux/folder-declutter-linux-${{ steps.get_version.outputs.current }}
+            artifact-macos/folder-declutter-macos-${{ steps.get_version.outputs.current }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
