@@ -3,8 +3,8 @@
 Folder Declutter is a command-line utility written in Rust that helps you free up disk space by automatically deleting files that haven't been modified in a specified number of days.
 
 > **Supported Operating Systems:**
-> Linux and macOS
-> *Windows support will be available in version 2.0*
+>
+> Linux and macOS only. *Windows support will be available in version 2.0*
 
 ## How It Works
 
