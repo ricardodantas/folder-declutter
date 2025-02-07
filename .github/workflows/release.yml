@@ -46,12 +46,15 @@ jobs:
           toolchain: stable
       - name: Build project
         run: cargo build --release
+      - name: Rename built binary with OS and version
+        run: |
+          mv target/release/folder-declutter target/release/folder-declutter-${{ matrix.os }}-${{ needs.check-version.outputs.current_version }}
       - name: Upload build artifact
         id: upload_artifact
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.os }}
-          path: target/release/folder-declutter  # adjust binary name if needed
+          path: target/release/folder-declutter-${{ matrix.os }}-${{ needs.check-version.outputs.current_version }}
 
   release:
     runs-on: ubuntu-latest
