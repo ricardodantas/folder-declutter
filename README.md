@@ -40,12 +40,6 @@ To automate the cleanup, add the following entry to your crontab:
 
 This cron setup will run Folder Declutter daily, removing files in the specified folder that are older than seven days.
 
-## Upcoming Features
-
-- **Service Mode:** Run the tool as a background service, eliminating the need for manual cron configuration.
-- **GUI Enhancements:** Add support for a system tray/menu bar interface for an improved user experience.
-- **Windows** support.
-
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
