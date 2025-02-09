@@ -8,13 +8,13 @@ use process_dir::process_dir;
 
 // Define CLI arguments structure using clap
 #[derive(Parser, Debug)]
-#[clap(author, version, about)]
+#[command(author, version, about)]
 struct Args {
-    #[clap(long, short)]
+    #[arg(long, short)]
     /// Folder path to search files in
     folder: String,
 
-    #[clap(long, short)]
+    #[arg(long, short)]
     /// Number of days (files older than this will be deleted)
     older_than_days: u64,
 }
