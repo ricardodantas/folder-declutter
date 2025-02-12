@@ -4,6 +4,9 @@ permissions:
 
 on:
   push:
+    paths:
+      - 'Cargo.toml'
+      - 'src/**'
     branches:
       - main
 
