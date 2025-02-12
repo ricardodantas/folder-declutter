@@ -3,6 +3,12 @@ name: Publish Crate
 on:
   workflow_dispatch:
   workflow_call:
+    inputs:
+      current_version:
+        type: string
+        required: true
+
+
   # release:
   #   types: [published]
 
@@ -35,6 +41,7 @@ jobs:
           formula-name: folder-declutter
           homebrew-tap: ricardodantas/homebrew-tap
           base-branch: main
+          tag-name: ${{ inputs.current_version }}
         env:
           # the personal access token should have "repo" & "workflow" scopes
           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
