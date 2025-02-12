@@ -33,6 +33,7 @@ jobs:
           # The "sha256" formula field will get automatically recomputed.
           formula-name: folder-declutter
           homebrew-tap: ricardodantas/homebrew-tap
+          base-branch: main
         env:
           # the personal access token should have "repo" & "workflow" scopes
           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
