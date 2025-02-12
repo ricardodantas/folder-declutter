@@ -6,6 +6,9 @@ on:
   # release:
   #   types: [published]
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -21,3 +24,15 @@ jobs:
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
         run: cargo publish --token $CARGO_REGISTRY_TOKEN
+
+      - uses: mislav/bump-homebrew-formula-action@v3
+        with:
+          # By default, this will edit the `my_formula.rb` formula in
+          # homebrew-core to update its "url" field to:
+          # `https://github.com/OWNER/REPO/archive/refs/tags/<tag-name>.tar.gz`
+          # The "sha256" formula field will get automatically recomputed.
+          formula-name: folder-declutter
+          homebrew-tap: ricardodantas/homebrew-tap
+        env:
+          # the personal access token should have "repo" & "workflow" scopes
+          COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
