@@ -25,6 +25,7 @@ jobs:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
         run: cargo publish --token $CARGO_REGISTRY_TOKEN
 
+
       - uses: mislav/bump-homebrew-formula-action@v3
         with:
           # By default, this will edit the `my_formula.rb` formula in
