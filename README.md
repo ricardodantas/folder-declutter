@@ -18,8 +18,6 @@ Folder Declutter is a command-line and library utility written in Rust that help
 
 ### Download and Installation
 
-#### Option 1 (via Homebrew - Recommended)
-
 Execute the commands below:
 
 ```bash
@@ -30,24 +28,12 @@ brew tap ricardodantas/tap
 brew install folder-declutter
 ```
 
-#### Option 2 (via cargo)
-
-Execute the command below:
-
-```bash
-cargo install folder-declutter
-```
-
-#### Option 3 (Manual)
-
-Download the latest version for your operating system from our [releases page](https://github.com/ricardodantas/folder-declutter/releases) and move the binary to `/usr/local/bin`.
-
 ### Scheduling with Cron
 
 To automate the cleanup, add the following entry to your crontab:
 
 ```crontab
-0 0 * * * folder-declutter --folder ~/Downloads --older-than-days 7
+0 9 * * * folder-declutter --folder ~/Downloads --older-than-days 7
 ```
 
 This cron setup will run Folder Declutter daily, removing files in the specified folder that are older than seven days.
