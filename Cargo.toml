@@ -18,7 +18,7 @@ categories = ["command-line-utilities"]
 clap = { version = "4.5.32", features = ["derive"] }
 
 [dev-dependencies]
-tempfile = "3.19.0"
+tempfile = "3.21.0"
 
 [lib]
 name = "folder_declutter"
